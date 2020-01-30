@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>Liczba podana przez użytkownika to <span id="rozmiar"></span></div>
+    <div>Utworzona tablica</div>
+    <div>[<span id="tablica"></span>]</div>
+
+    <script>
+        const elRozmiar = document.getElementById("rozmiar")
+        const elTablica = document.getElementById("tablica")
+
+        // pobieramy rozmiar
+        let rozmiar = prompt("Podaj rozmiar tablicy (większy od 1).", 6)
+        rozmiar = parseInt(rozmiar)
+
+        elRozmiar.textContent = rozmiar
+
+        let ar = []
+
+        if (isNaN(rozmiar) || rozmiar <= 1) {
+            alert("Podano nieprawidłowy rozmiar.")
+        } else {
+            // wypełniamy tablicę
+            const delta = 1.0 / (rozmiar - 1)
+            for (let i = 0; i < rozmiar; ++i) {
+                ar.push(i * delta)
+            }
+
+            // wypisujemy zawartość tablicy
+            let str = ""
+            for (let i = 0; i < ar.length; ++i) {
+                if (i > 0)
+                    str += ", "
+                str += ar[i].toFixed(2)
+            }
+            elTablica.textContent = str
+        }
+    </script>
+</body>
+
+</html>

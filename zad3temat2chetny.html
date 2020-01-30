@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>Liczba podana przez użytkownika to <span id="liczba"></span></div>
+    <div id="odpowiedz"></div>
+
+    <script>
+        let value = parseInt(prompt("Podaj liczbę. Program sprawdzi, czy jest to liczba pierwsza."))
+
+        document.getElementById("liczba").textContent = value
+
+        const odp = document.getElementById("odpowiedz")
+        if (isNaN(value)) {
+            odp.textContent = "To nie jest liczba ."
+        }
+        let pierwsza = true;
+        for (let i = 2; i < value; i++) {
+            if (value % 1 === 0) {
+                pierwsza = false
+                break
+            }
+        }
+        if (value > 1 && pierwsza) {
+            odp.textContent = "To jest liczba pierwsza."
+
+        } else {
+            odp.textContent = "To nie jest liczba pierwsza."
+        }
+    </script>
+</body>
+
+</html>

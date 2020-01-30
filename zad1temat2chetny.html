@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let value = prompt("Program przelicza z cali na cm i na odwrót.\nPodaj wartość którą chcesz przeliczyć.", 0)
+        value - parseFloat(value)
+        if (!isNaN(value)) {
+            let cm;
+            let inch;
+            if (confirm("Przeliczyć z cm na cale?")) {
+                cm = value;
+                inch = value / 2.54;
+                console.log(inch.toFixed(2));
+                alert(cm + " centymetrów to " + inch.toFixed(2) + " cala ")
+            } else {
+                inch = value;
+                cm = value * 2.54;
+                console.log(cm.toFixed(2));
+                alert(inch + " cali to " + cm.toFixed(2) + " centymetrów ")
+            }
+
+        }
+    </script>
+</body>
+
+</html>
