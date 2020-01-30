@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="out"></div>
+    <div id="out2"></div>
+
+
+    <script>
+        const giveNumbers = prompt("podaj liczby po przecinkach");
+        if (giveNumbers) {
+            const arrayNumbers = giveNumbers.split(",");
+            const arrayNewNumbers = [];
+
+            document.getElementById("out").textContent = arrayNumbers;
+
+            for (let index = 0; index < arrayNumbers.length; index++) {
+                let numb = parseInt(arrayNumbers[index]);
+
+                if (numb > 10) {
+                    numb = numb / 10;
+                    arrayNewNumbers.push(numb)
+
+                }
+            }
+            document.getElementById("out2").textContent = arrayNewNumbers
+        }
+    </script>
+
+
+
+</body>
+
+</html>

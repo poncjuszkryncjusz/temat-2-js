@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tablica od 1 do 100</title>
+</head>
+<body>
+   <div id="numbers-list"></div>
+   
+   <script>
+        
+        let x = [];
+let liczba=prompt("ile liczb losowac?")
+
+        while(x.length<liczba) {
+
+ let p=(Math.round(Math.random()*100));
+ if(p%2==0 && p!==0){
+     x.push(p);
+
+ }
+        }
+console.log(x);
+document.getElementById('numbers-list').textContent = x;
+
+
+
+// if(p%2==0 && p!=0)
+    
+   
+
+
+
+
+
+
+
+   
+
+  
+  
+
+
+        </script>
+</body>
+</html>
