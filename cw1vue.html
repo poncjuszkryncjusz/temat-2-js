@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="onClick">Kliknij mnie</button>
+        <ul v-for="array in arrays">
+            <li>{{array}}</li>
+        </ul>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                arrays: [],
+            },
+            methods: {
+                onClick() {
+                    for (let i = 0; i < 3; i++) {
+
+                        this.arrays.push(Math.round(Math.random() * 19));
+                        this.arrays.sort(function(a, b) {
+                            return a - b
+                        })
+                    }
+                }
+            }
+
+        })
+    </script>
+
+</body>
+
+</html>

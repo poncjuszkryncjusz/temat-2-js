@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="onClick">Kliknij mnie</button>
+        <template v-if="suma">
+            <h2>{{suma}}</h2>
+            <hr>
+          </template>
+
+        <template v-else-if="b">
+            <p> to nie</p>
+            <hr>
+           </template>
+
+
+
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                n1: "",
+                n2: "",
+                suma: "",
+                b: ""
+            },
+            methods: {
+                onClick() {
+                    this.n1 = prompt("podaj liczbe 1");
+                    this.n2 = prompt("podaj liczbe 2");
+                    this.n1 = parseFloat(this.n1);
+                    this.n2 = parseFloat(this.n2);
+                    this.suma = this.n1 * this.n2;
+                    this.b = isNaN(this.suma)
+                }
+            }
+
+        })
+    </script>
+
+</body>
+
+</html>

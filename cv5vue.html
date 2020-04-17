@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="onClick">Kliknij mnie</button>
+        <p>Message is: {{ message }}</p>
+
+
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                message: [],
+            },
+            methods: {
+                onClick() {
+                    const sentence = prompt("aaa")
+                    let sentenceWithWords = sentence.split(" ");
+                    let newArray = sentenceWithWords.length - 1;
+                    for (let i = 0; i < sentenceWithWords.length; i++) {
+                        this.message[newArray--] = sentenceWithWords[i];
+                        this.message.push(sentenceWithWords[i])
+                        console.log(this.message)
+                    }
+                },
+            }
+        })
+    </script>
+
+</body>
+
+</html>

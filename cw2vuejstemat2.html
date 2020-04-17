@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="onClick">Kliknij mnie</button>
+        <div>
+            {{ numbers }}
+        </div>
+
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                numbers: ""
+            },
+            methods: {
+                onClick() {
+                    do {
+                        this.numbers = 1 + Math.floor(Math.random() * 6);
+                        console.log("wylosowano " + this.numbers);
+                    } while (this.numbers != 6)
+                    console.log("udało się!");
+                    console.log(this.numbers)
+                }
+
+            }
+        })
+    </script>
+
+</body>
+
+</html>

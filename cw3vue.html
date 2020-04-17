@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="onClick">Kliknij mnie</button>
+        <li>{{numbers}}</li>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                numbers: [],
+            },
+            methods: {
+                onClick() {
+                    for (let i = 0; i < 100; i++) {
+                        if (i % 3 == 0 && i % 5 == 0) {
+                            this.numbers.push(i);
+                        }
+                    }
+                }
+            }
+
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="onClick">Kliknij mnie</button>
+        <p>{{numbers}}</p>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                numbers: [],
+            },
+            methods: {
+                onClick() {
+                    let pleasNumber = prompt("please");
+                    while (this.numbers.length < pleasNumber) {
+                        let randomNumbers = Math.round(Math.random() * 100);
+                        if (randomNumbers % 2 == 0 && randomNumbers !== 0) {
+                            this.numbers.push(randomNumbers);
+                            console.log(this.numbers)
+                        }
+                    }
+                }
+            }
+
+
+
+        })
+    </script>
+
+</body>
+
+</html>

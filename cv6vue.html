@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="onClick">Kliknij mnie</button>
+        <p>Numbers: {{ normalNumbers }}</p>
+        <p>Numbers10 : {{ decimalNumbers }}</p>
+
+
+
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                normalNumbers: [],
+                decimalNumbers: [],
+            },
+            methods: {
+                onClick() {
+                    const pleaseNumbers = prompt("please enter some numbers ");
+                    if (pleaseNumbers) {
+                        const arrayNumbers = pleaseNumbers.split(",");
+                        console.log(arrayNumbers);
+                        this.normalNumbers.push(arrayNumbers);
+                        for (let i = 0; i < arrayNumbers.length; i++) {
+                            let numbers = parseInt(arrayNumbers[i]);
+                            console.log(numbers);
+                            if (numbers > 10) {
+                                numbers = numbers / 10;
+                                this.decimalNumbers.push(numbers);
+                                console.log(this.decimalNumbers);
+                            }
+                        }
+                    }
+                },
+            }
+        })
+    </script>
+
+</body>
+
+</html>
