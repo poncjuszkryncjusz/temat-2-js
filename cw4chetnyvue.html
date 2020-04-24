@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="onClick">Kliknij mnie</button>
+        <div v-if="Number">Liczba podana przez użytkownika to : {{wielkoscTablicy}}</div>
+        <div>Utworzona tablica : {{array}}</div>
+
+
+
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                array: [],
+                wielkoscTablicy: ""
+            },
+            methods: {
+                onClick() {
+                    let sizeArray = prompt("podaj liczbe");
+                    this.wielkoscTablicy = parseInt(sizeArray);
+                    if (isNaN(this.wielkoscTablicy) || this.wielkoscTablicy <= 1) {
+                        alert("Podano nieprawidłowy rozmiar.")
+                    } else {
+                        // wypełniamy tablicę
+                        const delta = 1.0 / (this.wielkoscTablicy - 1)
+                            // console.log(delta.toFixed(2))
+                        for (let i = 0; i < this.wielkoscTablicy; ++i) {
+                            let fixed = i * delta;
+                            let ooo = fixed.toFixed(2);
+                            console.log(ooo)
+                            this.array.push(ooo);
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>

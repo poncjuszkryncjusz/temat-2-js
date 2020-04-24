@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="onClick">Kliknij mnie</button>
+        <h1>{{value}}</h1>
+
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                value: [],
+            },
+            methods: {
+                onClick() {
+                    let val = prompt("podaj liczbe");
+                    let valNumb = parseFloat(val)
+                        //this.value.push(valNumb)
+                    console.log(this.value);
+                    if (!isNaN(valNumb)) {
+                        let cm;
+                        let inch;
+                        if (confirm("Przeliczyć z cm na cale?")) {
+                            cm = valNumb;
+                            inch = valNumb / 2.54;
+                            console.log(inch.toFixed(2));
+                            this.value.push(inch.toFixed(2))
+
+                        } else {
+                            inch = valNumb;
+                            cm = valNumb * 2.54;
+                            console.log(cm.toFixed(2));
+                            this.value.push(cm.toFixed(2))
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>
